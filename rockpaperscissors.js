@@ -1,28 +1,36 @@
 function playRound(playerSelection, computerSelection){
-    let player = playerSelection.toLowerCase()
+    let player = playerSelection
+    let game = document.getElementById('status')
+
     if(player === computerSelection){
         return "Draw!"
     }else if(player == "rock"){
         if(computerSelection == "paper"){
-            return "AI selected Paper. AI WINS!"
+            computerWins ++
+            return game.innerHTML = "AI selected Paper. AI WINS!"
         }else{
-            return `You win! AI Selected ${computerSelection}`
+            playerWins++
+            return game.innerHTML = `You win! AI Selected ${computerSelection}`
         }
     }else if(player == "paper"){
         if(computerSelection == "scissors"){
-            return "AI selected Scissors. AI WINS!"
+            computerWins ++
+            return game.innerHTML = "AI selected Scissors. AI WINS!"
         }else{
-            return `You win! AI Selected ${computerSelection}`
+            playerWins++
+            return game.innerHTML = `You win! AI Selected ${computerSelection}`
         }
     }else if(player == "scissors"){
         if(computerSelection == "rock"){
-            return "AI selected rock. AI WINS!"
+            computerWins ++
+            return game.innerHTML = "AI selected rock. AI WINS!" 
         }else{
-            return `You win! AI Selected ${computerSelection}`
+            playerWins++
+            return game.innerHTML = `You win! AI Selected ${computerSelection}`
         }
     }
-//rock paper scissors
 }
+//rock paper scissors
 function getComputerChoice(){
     let num
     let choice
@@ -38,9 +46,35 @@ function getComputerChoice(){
     return choice
 }
 
-const rounds = prompt("How many rounds would you like to play")
-for(i = 0; i<rounds; i++){
-    const playerSelection = prompt("Rock, paper, or scissors! (Pick one)")
+
+
+let playerSelection
+document.getElementById('rock').addEventListener("click", function(){
+    playerSelection = "rock"
     let computerSelection = getComputerChoice()
-    alert(playRound(playerSelection, computerSelection))
-}
+    playRound(playerSelection, computerSelection)
+    document.getElementById('computer-wins').innerHTML = `Computer Wins: ${computerWins}`
+    document.getElementById('player-wins').innerHTML = `Your Wins: ${playerWins}`
+})
+document.getElementById('paper').addEventListener("click", function(){
+    playerSelection = "scissors"
+    let computerSelection = getComputerChoice()
+    playRound(playerSelection, computerSelection)
+    document.getElementById('computer-wins').innerHTML = `Computer Wins: ${computerWins}`
+    document.getElementById('player-wins').innerHTML = `Your Wins: ${playerWins}`
+})
+document.getElementById('scissors').addEventListener("click", function(){
+    playerSelection = "scissors"
+    let computerSelection = getComputerChoice()
+    playRound(playerSelection, computerSelection)
+    document.getElementById('comp-wins').innerHTML = `Computer Wins: ${computerWins}`
+    document.getElementById('player-wins').innerHTML = `Your Wins: ${playerWins}`
+})
+
+var computerWins = 0
+var playerWins = 0
+
+
+
+
+
