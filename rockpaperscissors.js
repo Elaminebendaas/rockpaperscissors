@@ -3,7 +3,7 @@ function playRound(playerSelection, computerSelection){
     let game = document.getElementById('status')
 
     if(player === computerSelection){
-        return "Draw!"
+        return game.innerHTML = "Draw!"
     }else if(player == "rock"){
         if(computerSelection == "paper"){
             computerWins ++
@@ -73,6 +73,7 @@ document.getElementById('scissors').addEventListener("click", function(){
 
 var computerWins = 0
 var playerWins = 0
+var draws
 
 
 
