@@ -13,8 +13,10 @@
 </head>
 <body>
     <div class="title">Rock Paper Scissors The Game!</div>
-    <p class="game-status"
-    id="status">Chose your hand</p>
+
+    <span class="game-status"><p 
+    id="status">Chose your hand</p></span>
+    
     <div class="hands">
         <button class="button" id="rock">
             <div class="sign">✊</div>
@@ -26,8 +28,11 @@
             <div class="sign">✌</div>
         </button>
     </div>
-    <div id="comp-wins">Computer wins:</div>
-    <div id="player-wins">Your wins:</div>
+    <div class="wins-container">
+        <div id="comp-wins">Computer wins:</div>
+        <div id="player-wins">Your wins:</div>
+    </div>
+    
 </body>
 <script src="rockpaperscissors.js"></script>
 </html>

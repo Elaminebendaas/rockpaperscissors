@@ -1,7 +1,9 @@
 *{
     margin: 0px;
     padding: 0px;
-    background-color: grey;
+}
+body{
+    background: grey;
 }
 .title{
     font-family: 'Press Start 2P', cursive;
@@ -17,9 +19,16 @@
     font-size: 48px
 }
 .game-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgray;
+    border-radius: 20px;
+    margin: 1em;
+    padding: 0;
     text-align: center;
     font-weight: 600;
-    padding: 75px;
+    
 }
 .hands{
     display: flex;
@@ -30,6 +39,12 @@
     font-size: 72px;
 }
 .button{
-    background-color: #222831;
-    border-radius: 12px;
+    background: lightgray;
+    border: 2px solid;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.button:hover{
+
+
 }
